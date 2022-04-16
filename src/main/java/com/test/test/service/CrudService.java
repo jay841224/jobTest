@@ -2,15 +2,16 @@ package com.test.test.service;
 
 import com.test.test.dto.CrudRequest;
 import com.test.test.dto.CrudResponse;
+import com.test.test.template.ResponseTemplate;
 
 public interface CrudService {
 	
-	void create(CrudRequest req);
+	ResponseTemplate<CrudResponse> create(CrudRequest req);
 	
-	CrudResponse read(CrudRequest req) throws Exception;
+	ResponseTemplate<CrudResponse>  read(CrudRequest req) throws Exception;
 	
-	void update(CrudRequest req) throws Exception;
+	ResponseTemplate<CrudResponse>  update(CrudRequest req) throws Exception;
 	
-	void delete(CrudRequest req);
+	ResponseTemplate<CrudResponse>  delete(CrudRequest req);
 
 }
