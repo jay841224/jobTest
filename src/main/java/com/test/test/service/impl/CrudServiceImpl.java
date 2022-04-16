@@ -39,9 +39,11 @@ public class CrudServiceImpl implements CrudService {
 	}
 
 	@Override
+	@Transactional(rollbackFor = Exception.class)
 	public ResponseTemplate<CrudResponse> update(CrudRequest req) throws Exception {
 		CurrencyEntity entity = currencyEntityRepo.findById(req.getCurrency()).orElseThrow(() -> new Exception());
 		entity.setCurrencyNT(req.getCurrencyNT());
+		currencyEntityRepo.save(entity);
 		return responseFactory.genResponse(null);
 	}
 

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.test.test.dto.CoinDeskResponse;
 import com.test.test.dto.GetResponse;
 import com.test.test.service.ApiService;
+import com.test.test.template.ResponseTemplate;
 
 @RestController
 @RequestMapping("/cur")
@@ -22,7 +23,7 @@ public class ApiController {
 	 * @return
 	 */
 	@RequestMapping(value = "/coinDesk", method = RequestMethod.POST)
-	public GetResponse callApi() {
+	public ResponseTemplate<GetResponse> callApi() {
 		return apiService.callApi();
 	}
 
@@ -33,7 +34,7 @@ public class ApiController {
 	 * @throws Exception
 	 */
 	@RequestMapping(value = "/coinDesk/tran", method = RequestMethod.POST)
-	public CoinDeskResponse callApiTran() throws Exception {
+	public ResponseTemplate<CoinDeskResponse> callApiTran() throws Exception {
 		return apiService.callApiTran();
 	}
 

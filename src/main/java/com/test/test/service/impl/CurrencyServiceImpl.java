@@ -18,6 +18,8 @@ import com.test.test.dto.GetResponseCurrency;
 import com.test.test.entity.CurrencyEntity;
 import com.test.test.repository.CurrencyEntityRepository;
 import com.test.test.service.ApiService;
+import com.test.test.template.ResponseFactory;
+import com.test.test.template.ResponseTemplate;
 
 @Service
 public class CurrencyServiceImpl implements ApiService {
@@ -27,6 +29,9 @@ public class CurrencyServiceImpl implements ApiService {
 
 	@Autowired
 	private CurrencyEntityRepository currencyEntityRepo;
+
+	@Autowired
+	private ResponseFactory responseFactory;
 
 	private static final String URL = "https://api.coindesk.com/v1/bpi/currentprice.json";
 
@@ -38,16 +43,16 @@ public class CurrencyServiceImpl implements ApiService {
 	 * call coinDesk api
 	 */
 	@Override
-	public GetResponse callApi() {
+	public ResponseTemplate<GetResponse> callApi() {
 
-		return restTemplate.getForObject(URL, GetResponse.class);
+		return responseFactory.genResponse(restTemplate.getForObject(URL, GetResponse.class));
 	}
 
 	/**
 	 * call coinDesk api and build response
 	 */
 	@Override
-	public CoinDeskResponse callApiTran() throws Exception {
+	public ResponseTemplate<CoinDeskResponse> callApiTran() throws Exception {
 		GetResponse getResponse = restTemplate.getForObject(URL, GetResponse.class);
 		List<CoinDeskDetailResponse> detailList = new ArrayList<>();
 
@@ -65,7 +70,7 @@ public class CurrencyServiceImpl implements ApiService {
 		CoinDeskResponse response = new CoinDeskResponse();
 		response.setDetailList(detailList);
 		response.setTime(getTime(getResponse.getTime().getUpdatedISO()));
-		return response;
+		return responseFactory.genResponse(response);
 	}
 
 	/**
