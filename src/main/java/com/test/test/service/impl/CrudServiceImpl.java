@@ -29,7 +29,7 @@ public class CrudServiceImpl implements CrudService {
 	public ResponseTemplate<CrudResponse> create(CrudRequest req) {
 		CurrencyEntity entity = objectMapper.convertValue(req, CurrencyEntity.class);
 		currencyEntityRepo.save(entity);
-		return responseFactory.genResponse(null);
+		return responseFactory.genResponse(new CrudResponse());
 	}
 
 	@Override
@@ -44,7 +44,7 @@ public class CrudServiceImpl implements CrudService {
 		CurrencyEntity entity = currencyEntityRepo.findById(req.getCurrency()).orElseThrow(() -> new Exception());
 		entity.setCurrencyNT(req.getCurrencyNT());
 		currencyEntityRepo.save(entity);
-		return responseFactory.genResponse(null);
+		return responseFactory.genResponse(new CrudResponse());
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class CrudServiceImpl implements CrudService {
 	public ResponseTemplate<CrudResponse> delete(CrudRequest req) {
 
 		currencyEntityRepo.deleteById(req.getCurrency());
-		return responseFactory.genResponse(null);
+		return responseFactory.genResponse(new CrudResponse());
 	}
 
 }
