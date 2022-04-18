@@ -32,6 +32,11 @@ import com.test.test.service.ApiService;
 import com.test.test.template.ResponseFactory;
 import com.test.test.template.ResponseTemplate;
 
+/**
+ * Controller 單元測試
+ * @author jay
+ *
+ */
 @SuppressWarnings("unused")
 @SpringBootTest
 public class ApiControllerTest {

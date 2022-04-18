@@ -27,6 +27,11 @@ import com.test.test.repository.CurrencyEntityRepository;
 import com.test.test.service.impl.CurrencyServiceImpl;
 import com.test.test.template.ResponseFactory;
 
+/**
+ * Service 單元測試
+ * @author jay
+ *
+ */
 @SpringBootTest
 public class CurrencyServiceImplTest {
 

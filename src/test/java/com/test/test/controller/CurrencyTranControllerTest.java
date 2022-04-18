@@ -30,6 +30,11 @@ import com.test.test.enums.State;
 import com.test.test.service.CrudService;
 import com.test.test.template.ResponseFactory;
 
+/**
+ * Controller 單元測試
+ * @author jay
+ *
+ */
 @SuppressWarnings("unused")
 @SpringBootTest
 public class CurrencyTranControllerTest {
