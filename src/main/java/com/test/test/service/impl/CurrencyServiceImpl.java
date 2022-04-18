@@ -19,7 +19,7 @@ import com.test.test.entity.CurrencyEntity;
 import com.test.test.enums.State;
 import com.test.test.exception.TestException;
 import com.test.test.repository.CurrencyEntityRepository;
-import com.test.test.service.ApiService;
+import com.test.test.service.CurrencyService;
 import com.test.test.template.ResponseFactory;
 import com.test.test.template.ResponseTemplate;
 
@@ -30,7 +30,7 @@ import com.test.test.template.ResponseTemplate;
  *
  */
 @Service
-public class CurrencyServiceImpl implements ApiService {
+public class CurrencyServiceImpl implements CurrencyService {
 
 	/** RestTemplate */
 	@Autowired

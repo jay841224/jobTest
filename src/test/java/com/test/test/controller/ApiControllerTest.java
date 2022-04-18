@@ -28,7 +28,7 @@ import com.test.test.dto.GetResponseBpi;
 import com.test.test.dto.GetResponseCurrency;
 import com.test.test.dto.GetResponseTime;
 import com.test.test.enums.State;
-import com.test.test.service.ApiService;
+import com.test.test.service.CurrencyService;
 import com.test.test.template.ResponseFactory;
 import com.test.test.template.ResponseTemplate;
 
@@ -50,7 +50,7 @@ public class ApiControllerTest {
 	private ResponseFactory responseFactory;
 
 	@MockBean
-	private ApiService apiService;
+	private CurrencyService currencyService;
 
 	@BeforeEach
 	public void setpup() {
@@ -108,7 +108,7 @@ public class ApiControllerTest {
 	 */
 	@Test
 	void callApiTest() {
-		when(apiService.callApi()).thenReturn(createGetResponse());
+		when(currencyService.callApi()).thenReturn(createGetResponse());
 
 		try {
 			// 模擬post，定義request為JSON格式
@@ -125,7 +125,7 @@ public class ApiControllerTest {
 	 */
 	@Test
 	void callApiTranTest() {
-		when(apiService.callApiTran()).thenReturn(createCoinDeskResponse());
+		when(currencyService.callApiTran()).thenReturn(createCoinDeskResponse());
 
 		try {
 			ResultActions resultActions = mockMvc

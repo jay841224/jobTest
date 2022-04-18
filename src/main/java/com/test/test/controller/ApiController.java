@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.test.test.dto.CoinDeskResponse;
 import com.test.test.dto.GetResponse;
-import com.test.test.service.ApiService;
+import com.test.test.service.CurrencyService;
 import com.test.test.template.ResponseTemplate;
 
 @RestController
@@ -16,7 +16,7 @@ public class ApiController {
 
 	/** ApiService */
 	@Autowired
-	private ApiService apiService;
+	private CurrencyService currencyService;
 
 	/**
 	 * call coinDesk API
@@ -25,7 +25,7 @@ public class ApiController {
 	 */
 	@RequestMapping(value = "/coinDesk", method = RequestMethod.POST)
 	public ResponseTemplate<GetResponse> callApi() {
-		return apiService.callApi();
+		return currencyService.callApi();
 	}
 
 	/**
@@ -36,7 +36,7 @@ public class ApiController {
 	 */
 	@RequestMapping(value = "/coinDesk/tran", method = RequestMethod.POST)
 	public ResponseTemplate<CoinDeskResponse> callApiTran() throws Exception {
-		return apiService.callApiTran();
+		return currencyService.callApiTran();
 	}
 
 }

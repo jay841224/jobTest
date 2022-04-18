@@ -10,7 +10,7 @@ import com.test.test.template.ResponseTemplate;
  * @author jay
  *
  */
-public interface ApiService {
+public interface CurrencyService {
 
 	/** call CoinDesk API */
 	ResponseTemplate<GetResponse> callApi();

@@ -41,8 +41,7 @@ public class CrudServiceImpl implements CrudService {
 	 */
 	@Override
 	public ResponseTemplate<CrudEmptyResponse> create(CrudRequest req) {
-		CurrencyEntity entity = objectMapper.convertValue(req, CurrencyEntity.class);
-		currencyEntityRepo.save(entity);
+		currencyEntityRepo.save(objectMapper.convertValue(req, CurrencyEntity.class));
 		return responseFactory.genResponse(new CrudEmptyResponse());
 	}
 
