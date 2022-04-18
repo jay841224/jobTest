@@ -1,17 +1,28 @@
 package com.test.test.service;
 
+import com.test.test.dto.CrudEmptyResponse;
 import com.test.test.dto.CrudRequest;
 import com.test.test.dto.CrudResponse;
+import com.test.test.exception.TestException;
 import com.test.test.template.ResponseTemplate;
 
+/**
+ * CRUD
+ * @author jay
+ *
+ */
 public interface CrudService {
 	
-	ResponseTemplate<CrudResponse> create(CrudRequest req);
+	/** 新增 */
+	ResponseTemplate<CrudEmptyResponse> create(CrudRequest req);
 	
-	ResponseTemplate<CrudResponse>  read(CrudRequest req) throws Exception;
+	/** 查詢 */
+	ResponseTemplate<CrudResponse>  read(CrudRequest req) throws TestException;
 	
-	ResponseTemplate<CrudResponse>  update(CrudRequest req) throws Exception;
+	/** 異動 */
+	ResponseTemplate<CrudEmptyResponse>  update(CrudRequest req) throws TestException;
 	
-	ResponseTemplate<CrudResponse>  delete(CrudRequest req);
+	/** 刪除 */
+	ResponseTemplate<CrudEmptyResponse>  delete(CrudRequest req);
 
 }

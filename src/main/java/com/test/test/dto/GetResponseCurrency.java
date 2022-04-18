@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
- * coinDesk api response cur
+ * coinDesk API response cur
  * @author jay
  *
  */

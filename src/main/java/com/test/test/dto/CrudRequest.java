@@ -6,6 +6,11 @@ import javax.validation.constraints.NotBlank;
 
 import lombok.Data;
 
+/**
+ * CRUD request
+ * @author jay
+ *
+ */
 @Data
 public class CrudRequest implements Serializable {
 

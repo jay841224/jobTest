@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import com.test.test.entity.CurrencyEntity;
 
+/**
+ * table TB_TRANSLATE repository
+ * @author jay
+ *
+ */
 @Repository
 public interface CurrencyEntityRepository extends JpaRepository<CurrencyEntity, String> {
 

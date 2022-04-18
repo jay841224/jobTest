@@ -7,6 +7,11 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+/**
+ * table TB_TRANSLATE
+ * @author jay
+ *
+ */
 @Entity
 @Table(name = "TB_TRANSLATE")
 @Data

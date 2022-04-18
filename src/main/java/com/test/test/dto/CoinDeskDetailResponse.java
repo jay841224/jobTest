@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 import lombok.Data;
 
+/**
+ * CoinDesk Detail response
+ * @author jay
+ *
+ */
 @Data
 public class CoinDeskDetailResponse implements Serializable {
 	

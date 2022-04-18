@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
- * coinDesk api response bpi
+ * coinDesk API response BPI
  * 
  * @author jay
  *
@@ -30,9 +30,15 @@ public class GetResponseBpi implements Serializable {
 
 	public List<GetResponseCurrency> getResponseCurrencyList() {
 		List<GetResponseCurrency> list = new ArrayList<>();
-		list.add(this.usd);
-		list.add(this.gbp);
-		list.add(this.eur);
+		if (this.usd != null) {
+			list.add(this.usd);
+		}
+		if (this.gbp != null) {
+			list.add(this.gbp);
+		}
+		if (this.eur != null) {
+			list.add(this.eur);
+		}
 		return list;
 	}
 }

@@ -2,6 +2,11 @@ package com.test.test.template;
 
 import org.springframework.stereotype.Component;
 
+/**
+ * response factory
+ * @author jay
+ *
+ */
 @Component
 public class ResponseFactory {
 

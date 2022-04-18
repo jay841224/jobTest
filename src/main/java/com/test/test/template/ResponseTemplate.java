@@ -2,6 +2,12 @@ package com.test.test.template;
 
 import lombok.Data;
 
+/**
+ * response template
+ * @author jay
+ *
+ * @param <S>
+ */
 @Data
 public class ResponseTemplate<S> {
 

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import lombok.Data;
 
 /**
- * coinDesk api response
+ * coinDesk API response
  * @author jay
  *
  */

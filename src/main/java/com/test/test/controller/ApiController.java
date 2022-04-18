@@ -14,11 +14,12 @@ import com.test.test.template.ResponseTemplate;
 @RequestMapping("/cur")
 public class ApiController {
 
+	/** ApiService */
 	@Autowired
 	private ApiService apiService;
 
 	/**
-	 * call coinDesk api
+	 * call coinDesk API
 	 * 
 	 * @return
 	 */
@@ -28,7 +29,7 @@ public class ApiController {
 	}
 
 	/**
-	 * call coinDesk api and build response
+	 * call coinDesk API and build response
 	 * 
 	 * @return
 	 * @throws Exception

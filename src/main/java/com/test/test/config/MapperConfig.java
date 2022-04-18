@@ -34,8 +34,13 @@ public class MapperConfig {
 		return restTemplate;
 	}
 	
+	/**
+	 * object mapper config
+	 * @return
+	 */
 	@Bean("objectMapper")
     public ObjectMapper myMapper() {
+		// 遇到空物件不拋錯
         return new ObjectMapper().disable(SerializationFeature.FAIL_ON_EMPTY_BEANS);
     }
 }
